@@ -1,0 +1,741 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83D709CA1B505C740020E8D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D709C91B505C740020E8D4 /* AppDelegate.swift */; };
+		83D709CD1B505C740020E8D4 /* HowToDoIt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83D709CB1B505C740020E8D4 /* HowToDoIt.xcdatamodeld */; };
+		83D709D21B505C740020E8D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D709D01B505C740020E8D4 /* Main.storyboard */; };
+		83D709D41B505C740020E8D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D709D31B505C740020E8D4 /* Images.xcassets */; };
+		83D709D71B505C740020E8D4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83D709D51B505C740020E8D4 /* LaunchScreen.xib */; };
+		83D709E31B505C740020E8D4 /* HowToDoItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D709E21B505C740020E8D4 /* HowToDoItTests.swift */; };
+		83D709F51B505CD80020E8D4 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D709F41B505CD80020E8D4 /* InterfaceController.swift */; };
+		83D709F71B505CD80020E8D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D709F61B505CD80020E8D4 /* Images.xcassets */; };
+		83D709FB1B505CD80020E8D4 /* HowToDoIt WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 83D709FA1B505CD80020E8D4 /* HowToDoIt WatchKit App.app */; };
+		83D70A031B505CD80020E8D4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D70A011B505CD80020E8D4 /* Interface.storyboard */; };
+		83D70A051B505CD80020E8D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D70A041B505CD80020E8D4 /* Images.xcassets */; };
+		83D70A081B505CD80020E8D4 /* HowToDoIt WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 83D709F01B505CD80020E8D4 /* HowToDoIt WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		83D70A141B505D210020E8D4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A131B505D210020E8D4 /* Common.swift */; };
+		83D70A161B505DBA0020E8D4 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A151B505DBA0020E8D4 /* CoreData.swift */; };
+		83D70A171B505DBA0020E8D4 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A151B505DBA0020E8D4 /* CoreData.swift */; };
+		83D70A181B505F840020E8D4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A131B505D210020E8D4 /* Common.swift */; };
+		83D70A1A1B5061720020E8D4 /* JobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A191B5061720020E8D4 /* JobTableViewController.swift */; };
+		83D70A1C1B5061F10020E8D4 /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A1B1B5061F10020E8D4 /* JobTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83D709DD1B505C740020E8D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83D709BC1B505C740020E8D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83D709C31B505C740020E8D4;
+			remoteInfo = HowToDoIt;
+		};
+		83D709FC1B505CD80020E8D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83D709BC1B505C740020E8D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83D709F91B505CD80020E8D4;
+			remoteInfo = "HowToDoIt WatchKit App";
+		};
+		83D70A061B505CD80020E8D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83D709BC1B505C740020E8D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83D709EF1B505CD80020E8D4;
+			remoteInfo = "HowToDoIt WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		83D70A0F1B505CD80020E8D4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				83D70A081B505CD80020E8D4 /* HowToDoIt WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		83D709C41B505C740020E8D4 /* HowToDoIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowToDoIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83D709C81B505C740020E8D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83D709C91B505C740020E8D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83D709CC1B505C740020E8D4 /* HowToDoIt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HowToDoIt.xcdatamodel; sourceTree = "<group>"; };
+		83D709D11B505C740020E8D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		83D709D31B505C740020E8D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		83D709D61B505C740020E8D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		83D709DC1B505C740020E8D4 /* HowToDoItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HowToDoItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83D709E11B505C740020E8D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83D709E21B505C740020E8D4 /* HowToDoItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToDoItTests.swift; sourceTree = "<group>"; };
+		83D709F01B505CD80020E8D4 /* HowToDoIt WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HowToDoIt WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83D709F31B505CD80020E8D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83D709F41B505CD80020E8D4 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		83D709F61B505CD80020E8D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		83D709FA1B505CD80020E8D4 /* HowToDoIt WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HowToDoIt WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83D70A001B505CD80020E8D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83D70A021B505CD80020E8D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		83D70A041B505CD80020E8D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		83D70A101B505CF00020E8D4 /* HowToDoIt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HowToDoIt.entitlements; sourceTree = "<group>"; };
+		83D70A111B505CFE0020E8D4 /* HowToDoIt WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "HowToDoIt WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		83D70A131B505D210020E8D4 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		83D70A151B505DBA0020E8D4 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		83D70A191B5061720020E8D4 /* JobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTableViewController.swift; sourceTree = "<group>"; };
+		83D70A1B1B5061F10020E8D4 /* JobTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83D709C11B505C740020E8D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83D709D91B505C740020E8D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83D709ED1B505CD80020E8D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83D709BB1B505C740020E8D4 = {
+			isa = PBXGroup;
+			children = (
+				83D709C61B505C740020E8D4 /* HowToDoIt */,
+				83D709DF1B505C740020E8D4 /* HowToDoItTests */,
+				83D709F11B505CD80020E8D4 /* HowToDoIt WatchKit Extension */,
+				83D709FE1B505CD80020E8D4 /* HowToDoIt WatchKit App */,
+				83D709C51B505C740020E8D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83D709C51B505C740020E8D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83D709C41B505C740020E8D4 /* HowToDoIt.app */,
+				83D709DC1B505C740020E8D4 /* HowToDoItTests.xctest */,
+				83D709F01B505CD80020E8D4 /* HowToDoIt WatchKit Extension.appex */,
+				83D709FA1B505CD80020E8D4 /* HowToDoIt WatchKit App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83D709C61B505C740020E8D4 /* HowToDoIt */ = {
+			isa = PBXGroup;
+			children = (
+				83D70A121B505D130020E8D4 /* Common */,
+				83D70A101B505CF00020E8D4 /* HowToDoIt.entitlements */,
+				83D709C91B505C740020E8D4 /* AppDelegate.swift */,
+				83D709D01B505C740020E8D4 /* Main.storyboard */,
+				83D709D31B505C740020E8D4 /* Images.xcassets */,
+				83D709D51B505C740020E8D4 /* LaunchScreen.xib */,
+				83D709C71B505C740020E8D4 /* Supporting Files */,
+				83D70A191B5061720020E8D4 /* JobTableViewController.swift */,
+				83D70A1B1B5061F10020E8D4 /* JobTableViewCell.swift */,
+			);
+			path = HowToDoIt;
+			sourceTree = "<group>";
+		};
+		83D709C71B505C740020E8D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83D709C81B505C740020E8D4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83D709DF1B505C740020E8D4 /* HowToDoItTests */ = {
+			isa = PBXGroup;
+			children = (
+				83D709E21B505C740020E8D4 /* HowToDoItTests.swift */,
+				83D709E01B505C740020E8D4 /* Supporting Files */,
+			);
+			path = HowToDoItTests;
+			sourceTree = "<group>";
+		};
+		83D709E01B505C740020E8D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83D709E11B505C740020E8D4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83D709F11B505CD80020E8D4 /* HowToDoIt WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				83D70A111B505CFE0020E8D4 /* HowToDoIt WatchKit Extension.entitlements */,
+				83D709F41B505CD80020E8D4 /* InterfaceController.swift */,
+				83D709F61B505CD80020E8D4 /* Images.xcassets */,
+				83D709F21B505CD80020E8D4 /* Supporting Files */,
+			);
+			path = "HowToDoIt WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		83D709F21B505CD80020E8D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83D709F31B505CD80020E8D4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83D709FE1B505CD80020E8D4 /* HowToDoIt WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				83D70A011B505CD80020E8D4 /* Interface.storyboard */,
+				83D70A041B505CD80020E8D4 /* Images.xcassets */,
+				83D709FF1B505CD80020E8D4 /* Supporting Files */,
+			);
+			path = "HowToDoIt WatchKit App";
+			sourceTree = "<group>";
+		};
+		83D709FF1B505CD80020E8D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83D70A001B505CD80020E8D4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83D70A121B505D130020E8D4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				83D709CB1B505C740020E8D4 /* HowToDoIt.xcdatamodeld */,
+				83D70A131B505D210020E8D4 /* Common.swift */,
+				83D70A151B505DBA0020E8D4 /* CoreData.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83D709C31B505C740020E8D4 /* HowToDoIt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83D709E61B505C740020E8D4 /* Build configuration list for PBXNativeTarget "HowToDoIt" */;
+			buildPhases = (
+				83D709C01B505C740020E8D4 /* Sources */,
+				83D709C11B505C740020E8D4 /* Frameworks */,
+				83D709C21B505C740020E8D4 /* Resources */,
+				83D70A0F1B505CD80020E8D4 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83D70A071B505CD80020E8D4 /* PBXTargetDependency */,
+			);
+			name = HowToDoIt;
+			productName = HowToDoIt;
+			productReference = 83D709C41B505C740020E8D4 /* HowToDoIt.app */;
+			productType = "com.apple.product-type.application";
+		};
+		83D709DB1B505C740020E8D4 /* HowToDoItTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83D709E91B505C740020E8D4 /* Build configuration list for PBXNativeTarget "HowToDoItTests" */;
+			buildPhases = (
+				83D709D81B505C740020E8D4 /* Sources */,
+				83D709D91B505C740020E8D4 /* Frameworks */,
+				83D709DA1B505C740020E8D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83D709DE1B505C740020E8D4 /* PBXTargetDependency */,
+			);
+			name = HowToDoItTests;
+			productName = HowToDoItTests;
+			productReference = 83D709DC1B505C740020E8D4 /* HowToDoItTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		83D709EF1B505CD80020E8D4 /* HowToDoIt WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83D70A0C1B505CD80020E8D4 /* Build configuration list for PBXNativeTarget "HowToDoIt WatchKit Extension" */;
+			buildPhases = (
+				83D709EC1B505CD80020E8D4 /* Sources */,
+				83D709ED1B505CD80020E8D4 /* Frameworks */,
+				83D709EE1B505CD80020E8D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83D709FD1B505CD80020E8D4 /* PBXTargetDependency */,
+			);
+			name = "HowToDoIt WatchKit Extension";
+			productName = "HowToDoIt WatchKit Extension";
+			productReference = 83D709F01B505CD80020E8D4 /* HowToDoIt WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		83D709F91B505CD80020E8D4 /* HowToDoIt WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83D70A091B505CD80020E8D4 /* Build configuration list for PBXNativeTarget "HowToDoIt WatchKit App" */;
+			buildPhases = (
+				83D709F81B505CD80020E8D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HowToDoIt WatchKit App";
+			productName = "HowToDoIt WatchKit App";
+			productReference = 83D709FA1B505CD80020E8D4 /* HowToDoIt WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83D709BC1B505C740020E8D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Henning Hoyer";
+				TargetAttributes = {
+					83D709C31B505C740020E8D4 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = W4PKX38PJS;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					83D709DB1B505C740020E8D4 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 83D709C31B505C740020E8D4;
+					};
+					83D709EF1B505CD80020E8D4 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = W4PKX38PJS;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					83D709F91B505CD80020E8D4 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 83D709BF1B505C740020E8D4 /* Build configuration list for PBXProject "HowToDoIt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83D709BB1B505C740020E8D4;
+			productRefGroup = 83D709C51B505C740020E8D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83D709C31B505C740020E8D4 /* HowToDoIt */,
+				83D709DB1B505C740020E8D4 /* HowToDoItTests */,
+				83D709EF1B505CD80020E8D4 /* HowToDoIt WatchKit Extension */,
+				83D709F91B505CD80020E8D4 /* HowToDoIt WatchKit App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83D709C21B505C740020E8D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83D709D21B505C740020E8D4 /* Main.storyboard in Resources */,
+				83D709D71B505C740020E8D4 /* LaunchScreen.xib in Resources */,
+				83D709D41B505C740020E8D4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83D709DA1B505C740020E8D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83D709EE1B505CD80020E8D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83D709FB1B505CD80020E8D4 /* HowToDoIt WatchKit App.app in Resources */,
+				83D709F71B505CD80020E8D4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83D709F81B505CD80020E8D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83D70A031B505CD80020E8D4 /* Interface.storyboard in Resources */,
+				83D70A051B505CD80020E8D4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83D709C01B505C740020E8D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83D70A141B505D210020E8D4 /* Common.swift in Sources */,
+				83D709CA1B505C740020E8D4 /* AppDelegate.swift in Sources */,
+				83D70A1A1B5061720020E8D4 /* JobTableViewController.swift in Sources */,
+				83D70A1C1B5061F10020E8D4 /* JobTableViewCell.swift in Sources */,
+				83D709CD1B505C740020E8D4 /* HowToDoIt.xcdatamodeld in Sources */,
+				83D70A161B505DBA0020E8D4 /* CoreData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83D709D81B505C740020E8D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83D709E31B505C740020E8D4 /* HowToDoItTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83D709EC1B505CD80020E8D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83D70A171B505DBA0020E8D4 /* CoreData.swift in Sources */,
+				83D70A181B505F840020E8D4 /* Common.swift in Sources */,
+				83D709F51B505CD80020E8D4 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		83D709DE1B505C740020E8D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83D709C31B505C740020E8D4 /* HowToDoIt */;
+			targetProxy = 83D709DD1B505C740020E8D4 /* PBXContainerItemProxy */;
+		};
+		83D709FD1B505CD80020E8D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83D709F91B505CD80020E8D4 /* HowToDoIt WatchKit App */;
+			targetProxy = 83D709FC1B505CD80020E8D4 /* PBXContainerItemProxy */;
+		};
+		83D70A071B505CD80020E8D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83D709EF1B505CD80020E8D4 /* HowToDoIt WatchKit Extension */;
+			targetProxy = 83D70A061B505CD80020E8D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		83D709D01B505C740020E8D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83D709D11B505C740020E8D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		83D709D51B505C740020E8D4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83D709D61B505C740020E8D4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		83D70A011B505CD80020E8D4 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83D70A021B505CD80020E8D4 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		83D709E41B505C740020E8D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		83D709E51B505C740020E8D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		83D709E71B505C740020E8D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HowToDoIt/HowToDoIt.entitlements;
+				INFOPLIST_FILE = HowToDoIt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		83D709E81B505C740020E8D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HowToDoIt/HowToDoIt.entitlements;
+				INFOPLIST_FILE = HowToDoIt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		83D709EA1B505C740020E8D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HowToDoItTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HowToDoIt.app/HowToDoIt";
+			};
+			name = Debug;
+		};
+		83D709EB1B505C740020E8D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HowToDoItTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HowToDoIt.app/HowToDoIt";
+			};
+			name = Release;
+		};
+		83D70A0A1B505CD80020E8D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = HowToDoIt_WatchKit_Extension;
+				INFOPLIST_FILE = "HowToDoIt WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		83D70A0B1B505CD80020E8D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = HowToDoIt_WatchKit_Extension;
+				INFOPLIST_FILE = "HowToDoIt WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		83D70A0D1B505CD80020E8D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "HowToDoIt WatchKit Extension/HowToDoIt WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HowToDoIt WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		83D70A0E1B505CD80020E8D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "HowToDoIt WatchKit Extension/HowToDoIt WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "HowToDoIt WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83D709BF1B505C740020E8D4 /* Build configuration list for PBXProject "HowToDoIt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83D709E41B505C740020E8D4 /* Debug */,
+				83D709E51B505C740020E8D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83D709E61B505C740020E8D4 /* Build configuration list for PBXNativeTarget "HowToDoIt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83D709E71B505C740020E8D4 /* Debug */,
+				83D709E81B505C740020E8D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		83D709E91B505C740020E8D4 /* Build configuration list for PBXNativeTarget "HowToDoItTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83D709EA1B505C740020E8D4 /* Debug */,
+				83D709EB1B505C740020E8D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		83D70A091B505CD80020E8D4 /* Build configuration list for PBXNativeTarget "HowToDoIt WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83D70A0A1B505CD80020E8D4 /* Debug */,
+				83D70A0B1B505CD80020E8D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		83D70A0C1B505CD80020E8D4 /* Build configuration list for PBXNativeTarget "HowToDoIt WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83D70A0D1B505CD80020E8D4 /* Debug */,
+				83D70A0E1B505CD80020E8D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		83D709CB1B505C740020E8D4 /* HowToDoIt.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				83D709CC1B505C740020E8D4 /* HowToDoIt.xcdatamodel */,
+			);
+			currentVersion = 83D709CC1B505C740020E8D4 /* HowToDoIt.xcdatamodel */;
+			path = HowToDoIt.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 83D709BC1B505C740020E8D4 /* Project object */;
+}
