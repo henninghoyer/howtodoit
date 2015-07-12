@@ -25,6 +25,13 @@
 		83D70A181B505F840020E8D4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A131B505D210020E8D4 /* Common.swift */; };
 		83D70A1A1B5061720020E8D4 /* JobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A191B5061720020E8D4 /* JobTableViewController.swift */; };
 		83D70A1C1B5061F10020E8D4 /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A1B1B5061F10020E8D4 /* JobTableViewCell.swift */; };
+		83D70A1E1B52EFC00020E8D4 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A1D1B52EFC00020E8D4 /* Job.swift */; };
+		83D70A1F1B52EFC00020E8D4 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A1D1B52EFC00020E8D4 /* Job.swift */; };
+		83D70A211B52EFC00020E8D4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A201B52EFC00020E8D4 /* Task.swift */; };
+		83D70A221B52EFC00020E8D4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A201B52EFC00020E8D4 /* Task.swift */; };
+		83D70A241B52EFC00020E8D4 /* CommandTunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A231B52EFC00020E8D4 /* CommandTunnel.swift */; };
+		83D70A251B52EFC00020E8D4 /* CommandTunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A231B52EFC00020E8D4 /* CommandTunnel.swift */; };
+		83D70A271B52F65A0020E8D4 /* Job+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A261B52F65A0020E8D4 /* Job+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +97,10 @@
 		83D70A151B505DBA0020E8D4 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		83D70A191B5061720020E8D4 /* JobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTableViewController.swift; sourceTree = "<group>"; };
 		83D70A1B1B5061F10020E8D4 /* JobTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
+		83D70A1D1B52EFC00020E8D4 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		83D70A201B52EFC00020E8D4 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		83D70A231B52EFC00020E8D4 /* CommandTunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTunnel.swift; sourceTree = "<group>"; };
+		83D70A261B52F65A0020E8D4 /* Job+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Job+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +231,10 @@
 		83D70A121B505D130020E8D4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				83D70A231B52EFC00020E8D4 /* CommandTunnel.swift */,
+				83D70A201B52EFC00020E8D4 /* Task.swift */,
+				83D70A1D1B52EFC00020E8D4 /* Job.swift */,
+				83D70A261B52F65A0020E8D4 /* Job+Extension.swift */,
 				83D709CB1B505C740020E8D4 /* HowToDoIt.xcdatamodeld */,
 				83D70A131B505D210020E8D4 /* Common.swift */,
 				83D70A151B505DBA0020E8D4 /* CoreData.swift */,
@@ -400,11 +415,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D70A211B52EFC00020E8D4 /* Task.swift in Sources */,
+				83D70A271B52F65A0020E8D4 /* Job+Extension.swift in Sources */,
 				83D70A141B505D210020E8D4 /* Common.swift in Sources */,
 				83D709CA1B505C740020E8D4 /* AppDelegate.swift in Sources */,
+				83D70A241B52EFC00020E8D4 /* CommandTunnel.swift in Sources */,
 				83D70A1A1B5061720020E8D4 /* JobTableViewController.swift in Sources */,
 				83D70A1C1B5061F10020E8D4 /* JobTableViewCell.swift in Sources */,
 				83D709CD1B505C740020E8D4 /* HowToDoIt.xcdatamodeld in Sources */,
+				83D70A1E1B52EFC00020E8D4 /* Job.swift in Sources */,
 				83D70A161B505DBA0020E8D4 /* CoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,7 +442,10 @@
 			files = (
 				83D70A171B505DBA0020E8D4 /* CoreData.swift in Sources */,
 				83D70A181B505F840020E8D4 /* Common.swift in Sources */,
+				83D70A221B52EFC00020E8D4 /* Task.swift in Sources */,
+				83D70A251B52EFC00020E8D4 /* CommandTunnel.swift in Sources */,
 				83D709F51B505CD80020E8D4 /* InterfaceController.swift in Sources */,
+				83D70A1F1B52EFC00020E8D4 /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

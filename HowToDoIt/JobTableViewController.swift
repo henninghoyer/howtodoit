@@ -36,7 +36,7 @@ class JobTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(kJobTableViewCell, forIndexPath: indexPath) as! JobTableViewCell
-        cell.textLabel?.text = "Row \(indexPath.row)"
+        cell.nameButtonOutlet.setTitle("Row \(indexPath.row)", forState: UIControlState.Normal)
         return cell
     }
 }
