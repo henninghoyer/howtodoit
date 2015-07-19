@@ -15,6 +15,7 @@ extension Job {
         let job = NSEntityDescription.insertNewObjectForEntityForName(kJobEntity, inManagedObjectContext: CoreData.sharedInstance.managedObjectContext!) as! Job
         
         job.name = name
+        
         CoreData.sharedInstance.saveContext()
         
         return job

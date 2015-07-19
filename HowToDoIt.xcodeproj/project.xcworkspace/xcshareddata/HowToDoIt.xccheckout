@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>A2F8BD29-43F1-4FD1-A9E3-74181A5A3F41</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>HowToDoIt</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>61457B1F6DC215FED50EAB2CB9AC9F9F3194F0E7</key>
 		<string>https://github.com/henninghoyer/howtodoit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>HowToDoIt.xcodeproj/project.xcworkspace</string>
+	<string>HowToDoIt.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>61457B1F6DC215FED50EAB2CB9AC9F9F3194F0E7</key>
