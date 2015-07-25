@@ -21,4 +21,9 @@ extension Job {
         return job
     }
     
+    func delete() {
+        CoreData.sharedInstance.managedObjectContext?.deleteObject(self)
+        CoreData.sharedInstance.saveContext()
+    }
+    
 }

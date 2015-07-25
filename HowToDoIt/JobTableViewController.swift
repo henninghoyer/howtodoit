@@ -7,9 +7,30 @@
 //
 
 import UIKit
+import CoreData
 
 class JobTableViewController: UITableViewController {
 
+    private var _fetchedResultsController:NSFetchedResultsController!
+    private var fetchedResultsController:NSFetchedResultsController! {
+        if _fetchedResultsController != nil {return _fetchedResultsController}
+        
+        let request = NSFetchRequest(entityName: kJobEntity)
+
+        //request needs to be sorted
+        request.sortDescriptors = [NSSortDescriptor(key: kJobOrderAttribute, ascending: true)]
+        
+        //initialize _fetchedResultsController
+        _fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreData.sharedInstance.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        //set delegate to monitor for changes (observer?)
+        _fetchedResultsController.delegate = self
+    
+        //not catching error since if this fails then our database is corrupted and the app won't work anyway.
+        _fetchedResultsController.performFetch(nil)
+        
+        return _fetchedResultsController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,18 +81,27 @@ class JobTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return fetchedResultsController.sections?.count ?? 0 //nil-coalescing operator
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 100
+        return (fetchedResultsController.sections?[section] as? NSFetchedResultsSectionInfo)?.numberOfObjects ?? 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(kJobTableViewCell, forIndexPath: indexPath) as! JobTableViewCell
-        cell.nameButtonOutlet.setTitle("Row \(indexPath.row)", forState: UIControlState.Normal)
+        
+        cell.job = fetchedResultsController.objectAtIndexPath(indexPath) as! Job
+        
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let job = fetchedResultsController.objectAtIndexPath(indexPath) as! Job
+            job.delete()
+        }
     }
 }

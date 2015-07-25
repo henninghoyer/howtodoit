@@ -10,6 +10,12 @@ import UIKit
 
 class JobTableViewCell: UITableViewCell {
 
+    var job:Job! {//implicit unwrapped optional
+        didSet {
+            nameButtonOutlet.setTitle(job.name, forState: .Normal)
+        }
+    }
+    
     @IBOutlet weak var nameButtonOutlet: UIButton!
     @IBOutlet weak var progressCircleImageViewOutlet: UIImageView!
 

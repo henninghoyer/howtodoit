@@ -11,3 +11,4 @@ import Foundation
 let kAppGroup = "group.com.henninghoyer.howto-doit"
 let kJobTableViewCell = "JobTableViewCell"
 let kJobEntity = "Job"
+let kJobOrderAttribute = "order"
