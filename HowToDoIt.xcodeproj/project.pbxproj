@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		835261771B63AC9D000342F0 /* JobTableViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835261761B63AC9D000342F0 /* JobTableViewController+Extension.swift */; };
+		8352617C1B64F103000342F0 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8352617B1B64F103000342F0 /* UIHelper.swift */; };
 		83C6FAFB1B5C3FFA00F4E396 /* CommandTunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FAFA1B5C3FFA00F4E396 /* CommandTunnel.swift */; };
 		83C6FAFD1B5C3FFB00F4E396 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FAFC1B5C3FFB00F4E396 /* Job.swift */; };
 		83C6FAFF1B5C3FFB00F4E396 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FAFE1B5C3FFB00F4E396 /* Task.swift */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		835261761B63AC9D000342F0 /* JobTableViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JobTableViewController+Extension.swift"; sourceTree = "<group>"; };
+		8352617B1B64F103000342F0 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		83C6FAFA1B5C3FFA00F4E396 /* CommandTunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTunnel.swift; sourceTree = "<group>"; };
 		83C6FAFC1B5C3FFB00F4E396 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		83C6FAFE1B5C3FFB00F4E396 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -127,6 +129,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		835261781B64F089000342F0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8352617B1B64F103000342F0 /* UIHelper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		83D709BB1B505C740020E8D4 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +170,7 @@
 				83D709D51B505C740020E8D4 /* LaunchScreen.xib */,
 				83D709C71B505C740020E8D4 /* Supporting Files */,
 				83D70A191B5061720020E8D4 /* JobTableViewController.swift */,
+				835261781B64F089000342F0 /* Helpers */,
 				835261761B63AC9D000342F0 /* JobTableViewController+Extension.swift */,
 				83D70A1B1B5061F10020E8D4 /* JobTableViewCell.swift */,
 			);
@@ -426,6 +437,7 @@
 				83D709CD1B505C740020E8D4 /* HowToDoIt.xcdatamodeld in Sources */,
 				83D70A161B505DBA0020E8D4 /* CoreData.swift in Sources */,
 				835261771B63AC9D000342F0 /* JobTableViewController+Extension.swift in Sources */,
+				8352617C1B64F103000342F0 /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

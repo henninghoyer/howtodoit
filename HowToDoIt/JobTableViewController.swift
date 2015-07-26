@@ -51,28 +51,22 @@ class JobTableViewController: UITableViewController {
     // MARK: - Job Table View Handlers
     func addJob(sender:UIBarButtonItem) {
         
-        // When add gets pressed we need an alert to come up and ask for input. At least for now.
-        // Dialog itself
-        let dialog = UIAlertController(title: "New Job", message: "Please add the name of the Job you would like to add.", preferredStyle: UIAlertControllerStyle.Alert)
+        let title = NSLocalizedString("titleCreateJobDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Jobs", comment: "Job Title View Controller Title")
+        let placeholder = NSLocalizedString("placeholderCreateJobDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Job", comment: "Placeholder for job creation dialog")
+        let message = NSLocalizedString("messageCreateJobDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Enter a job name. This dialog will show up again until you press cancel so that you can easily add multiple jobs.", comment: "Message for job creation dialog")
+        let ok = NSLocalizedString("okButtonCreateJobDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Ok", comment: "Ok Button in job creation dialog")
+        let cancel = NSLocalizedString("cancelButtonCreateJobDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Cancel", comment: "Cancel button in job creation dialog")
         
-        // Buttons to be added to dialog
-        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-        let ok = UIAlertAction(title: "Ok", style: .Default) { (action) -> Void in
-            println("OK pressed.")
+        //weak self essentially helps to deal with garbage collection. If we just use 'self in line 66 (self.addJob...) then we would have a reference to the JobTable View Controller which would thus never be discarded from memory. At least not cleanly. A weak reference will allow it to be removed from memory without any errors. As a consequence, we have to treat self, in the context of a weak self, as an optional. Hence the '?' in line 66.
+        let dialog = UIHelper.singleTextFieldDialogWithTitle(title, message: message, placeholder: placeholder, textFieldValue: "", okLabel: ok, cancelLabel: cancel) { [weak self] (text) -> Void in
             
-            if let textField = dialog.textFields?.first as? UITextField where !textField.text.isEmpty {
-                Job.createJobWithName(textField.text)
+            Job.createJobWithName(text)
+            
+            UIHelper.delayOnMainQueue(0.3) { () -> Void in
+                self?.addJob(sender)
             }
         }
-        let jobTitle = dialog.addTextFieldWithConfigurationHandler { (textField) -> Void in
-            textField.placeholder = "Jobname"
-        }
         
-        // Add actions to dialog
-        dialog.addAction(cancel)
-        dialog.addAction(ok)
-        
-        // Show dialog
         presentViewController(dialog, animated: true, completion: nil)
     }
     
