@@ -98,6 +98,7 @@ class JobTableViewController: UITableViewController {
         return cell
     }
     
+    //this is what you need to implement swipe to delete "commitEditingStyle
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let job = fetchedResultsController.objectAtIndexPath(indexPath) as! Job

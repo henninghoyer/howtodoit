@@ -14,13 +14,40 @@ import Foundation
 private var coreDataSharedInstance = CoreData()
 
 class CoreData {
-    // MARK: - Core Data stack
+    
+    //MARK: - Helper functions
+    static func minMaxIntegerValueForEntity(entityName:String, attributeName:String, minimum:Bool, predicate:NSPredicate = NSPredicate(value: true)) -> Int {
+        
+        //create request object and set parameters for fetch
+        let request = NSFetchRequest(entityName: entityName)
+        request.sortDescriptors = [NSSortDescriptor(key: attributeName, ascending: minimum)]
+        request.fetchLimit = 1
+        request.predicate = predicate
+        
+        // Execute request. If everything works as expected then return an integer value from the retrieved object, if not return 0
+        if let object = CoreData.sharedInstance.managedObjectContext?.executeFetchRequest(request, error: nil)?.first as? NSManagedObject {
+            return object.valueForKey(attributeName)?.integerValue ?? 0
+        }
+        return 0
+    }
+    
+    // The following are convenience functions, they simply call minMaxIntegerValueForEntity with different values for the minimum parameter
+    static func minIntegerValueForEntity(entityName:String, attributeName:String, predicate:NSPredicate = NSPredicate(value: true)) -> Int {
+        return minMaxIntegerValueForEntity(entityName, attributeName: attributeName, minimum: true, predicate: predicate)
+    }
+
+    static func maxIntegerValueForEntity(entityName:String, attributeName:String, predicate:NSPredicate = NSPredicate(value: true)) -> Int {
+        return minMaxIntegerValueForEntity(entityName, attributeName: attributeName, minimum: false, predicate: predicate)
+    }
+
+    //MARK: Shared Instance Creation - Singleton Pattern
     class var sharedInstance: CoreData{
         return coreDataSharedInstance
     }
     
     private init () {}
     
+    // MARK: - Core Data stack
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "com.henninghoyer.HowToDoIt" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)

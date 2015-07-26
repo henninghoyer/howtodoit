@@ -12,6 +12,7 @@ class JobTableViewCell: UITableViewCell {
 
     var job:Job! {//implicit unwrapped optional
         didSet {
+            //nameButtonOutlet.setTitle(job.name + " order:\(job.order)", forState: .Normal)
             nameButtonOutlet.setTitle(job.name, forState: .Normal)
         }
     }
