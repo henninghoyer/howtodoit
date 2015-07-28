@@ -24,6 +24,16 @@ extension Job {
         return job
     }
     
+    static func deleteAll() {
+        let request = NSFetchRequest(entityName: kJobEntity)
+        if let allJobs = CoreData.sharedInstance.managedObjectContext?.executeFetchRequest(request, error: nil) as? [Job] {
+            for job in allJobs {
+               CoreData.sharedInstance.managedObjectContext?.deleteObject(job)
+            }
+            CoreData.sharedInstance.saveContext()
+        }
+    }
+
     func delete() {
         CoreData.sharedInstance.managedObjectContext?.deleteObject(self)
         CoreData.sharedInstance.saveContext()

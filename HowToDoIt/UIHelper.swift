@@ -46,4 +46,20 @@ class UIHelper {
         
         return controller
     }
+    
+    static func dialogWithTitle(title: String, message: String, okLabel: String, cancelLabel: String, callback: () -> Void) -> UIAlertController {
+        
+        let controller = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        let okAction = UIAlertAction(title: okLabel, style: .Default) { (action) -> Void in
+            callback()
+        }
+        
+        let cancelAction = UIAlertAction(title: cancelLabel, style: .Cancel, handler: nil)
+        
+        controller.addAction(okAction)
+        controller.addAction(cancelAction)
+        
+        return controller
+    }
 }

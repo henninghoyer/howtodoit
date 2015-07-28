@@ -38,7 +38,8 @@ class JobTableViewController: UITableViewController {
         
         // Add an "Add" Button to the right side of the navigation bar
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addJob:")
-        navigationItem.setRightBarButtonItems([addButton,editButtonItem()], animated: true)
+        let deleteAllButton = UIBarButtonItem(barButtonSystemItem: .Trash, target: self, action: "deleteAll")
+        navigationItem.setRightBarButtonItems([addButton,editButtonItem(),deleteAllButton], animated: true)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -47,7 +48,7 @@ class JobTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    // MARK: - Job Table View Handlers
+    // MARK: - Bar Button Item Actions
     func addJob(sender:UIBarButtonItem) {
         
         let title = NSLocalizedString("titleCreateJobDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Create Job", comment: "Job Creation Title View Controller Title")
@@ -66,6 +67,19 @@ class JobTableViewController: UITableViewController {
             }
         }
         
+        presentViewController(dialog, animated: true, completion: nil)
+    }
+
+    func deleteAll() {
+        let title = NSLocalizedString("titleDeleteAllDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Delete all Jobs", comment: "Job Deletion Title View Controller Title")
+        let message = NSLocalizedString("messageDeleteAllDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Are you sure you want to delete all jobs?", comment: "Message for job deletion dialog")
+        let ok = NSLocalizedString("okButtonDeleteAllDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Yes, DELETE all jobs.", comment: "Ok Button in job creation dialog")
+        let cancel = NSLocalizedString("cancelDeleteAllJobDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Cancel", comment: "Cancel button in job creation dialog")
+        
+        //weak self essentially helps to deal with garbage collection. If we just use 'self in line 66 (self.addJob...) then we would have a reference to the JobTable View Controller which would thus never be discarded from memory. At least not cleanly. A weak reference will allow it to be removed from memory without any errors. As a consequence, we have to treat self, in the context of a weak self, as an optional. Hence the '?' in line 66.
+        let dialog = UIHelper.dialogWithTitle(title, message: message, okLabel: ok, cancelLabel: cancel) { 
+            Job.deleteAll()
+        }
         presentViewController(dialog, animated: true, completion: nil)
     }
     
@@ -120,6 +134,5 @@ class JobTableViewController: UITableViewController {
         let dest = fetchedResultsController.objectAtIndexPath(destinationIndexPath) as! NSManagedObject
         
         CoreData.move(kJobEntity, orderAttributeName: kJobOrderAttribute, source: source, toDestination: dest)
-        tableView.reloadData() //TODO: debugging only!!!
     }
 }
