@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xqg-Ls-LIz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A226f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xqg-Ls-LIz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -12,6 +12,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="N4M-7b-SHp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobTableViewCell" id="m5e-yb-8tz" customClass="JobTableViewCell" customModule="HowToDoIt" customModuleProvider="target">
@@ -21,6 +22,7 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHj-wv-EhB">
                                             <rect key="frame" x="8" y="13" width="546" height="18"/>
+                                            <animations/>
                                             <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                             <state key="normal" title="Button">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,6 +33,7 @@
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r1Q-Xt-CkQ">
                                             <rect key="frame" x="562" y="7" width="30" height="30"/>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="QBV-n1-kHk"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="aOh-Do-Etd"/>
@@ -38,6 +41,7 @@
                                             </constraints>
                                         </imageView>
                                     </subviews>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="r1Q-Xt-CkQ" firstAttribute="leading" secondItem="MHj-wv-EhB" secondAttribute="trailing" constant="8" id="1Iw-4N-1LQ"/>
                                         <constraint firstAttribute="centerY" secondItem="MHj-wv-EhB" secondAttribute="centerY" id="8Oq-Kn-ZWu"/>
@@ -50,6 +54,7 @@
                                         <constraint firstAttribute="centerY" secondItem="r1Q-Xt-CkQ" secondAttribute="centerY" id="mIp-UT-A1k"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="nameButtonOutlet" destination="MHj-wv-EhB" id="3GJ-XG-Sa2"/>
                                     <outlet property="progressCircleImageViewOutlet" destination="r1Q-Xt-CkQ" id="2P0-RU-2HK"/>
@@ -75,6 +80,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eCL-cy-sRt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

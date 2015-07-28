@@ -16,6 +16,35 @@ private var coreDataSharedInstance = CoreData()
 class CoreData {
     
     //MARK: - Helper functions
+    static func move(entityName:String, orderAttributeName:String, source:NSManagedObject, toDestination:NSManagedObject) {
+        if let sourceOrder = source.valueForKey(orderAttributeName)?.integerValue, destinationOrder = toDestination.valueForKey(orderAttributeName)?.integerValue {
+            let request = NSFetchRequest(entityName: entityName)
+            
+            //TODO: This is wrong! Need to make sure this works with my sort order, esp. nspredicate might not be ok.
+            if sourceOrder < destinationOrder { //we are moving an item down the list
+                request.sortDescriptors = [NSSortDescriptor(key: orderAttributeName, ascending: false)]
+                request.predicate = NSPredicate(format: "\(orderAttributeName) > \(sourceOrder) AND \(orderAttributeName) <= \(destinationOrder)")
+                if let resultArray = CoreData.sharedInstance.managedObjectContext?.executeFetchRequest(request, error: nil) as? [NSManagedObject] {
+                    resultArray.map {(object) -> NSManagedObject in
+                        object.setValue(object.valueForKey(orderAttributeName)!.integerValue - 1, forKey: orderAttributeName)
+                        return object
+                    }
+                }
+            } else if sourceOrder > destinationOrder { //we are moving an item up the list
+                request.sortDescriptors = [NSSortDescriptor(key: orderAttributeName, ascending: true)]
+                request.predicate = NSPredicate(format: "\(orderAttributeName) >= \(destinationOrder) AND \(orderAttributeName) < \(sourceOrder)")
+                if let resultArray = CoreData.sharedInstance.managedObjectContext?.executeFetchRequest(request, error: nil) as? [NSManagedObject] {
+                    resultArray.map {(object) -> NSManagedObject in
+                        object.setValue(object.valueForKey(orderAttributeName)!.integerValue + 1, forKey: orderAttributeName)
+                        return object
+                    }
+                }
+            }
+            source.setValue(destinationOrder, forKey: orderAttributeName)
+            CoreData.sharedInstance.saveContext()
+        }
+    }
+    
     static func minMaxIntegerValueForEntity(entityName:String, attributeName:String, minimum:Bool, predicate:NSPredicate = NSPredicate(value: true)) -> Int {
         
         //create request object and set parameters for fetch

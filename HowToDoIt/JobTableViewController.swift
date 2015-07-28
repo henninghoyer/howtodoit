@@ -11,9 +11,7 @@ import CoreData
 
 class JobTableViewController: UITableViewController {
 
-    private var _fetchedResultsController:NSFetchedResultsController!
-    private var fetchedResultsController:NSFetchedResultsController! {
-        if _fetchedResultsController != nil {return _fetchedResultsController}
+    private lazy var fetchedResultsController:NSFetchedResultsController! = {
         
         let request = NSFetchRequest(entityName: kJobEntity)
 
@@ -21,15 +19,16 @@ class JobTableViewController: UITableViewController {
         request.sortDescriptors = [NSSortDescriptor(key: kJobOrderAttribute, ascending: true)]
         
         //initialize _fetchedResultsController
-        _fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreData.sharedInstance.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreData.sharedInstance.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        
         //set delegate to monitor for changes (observer?)
-        _fetchedResultsController.delegate = self
+        fetchedResultsController.delegate = self
     
         //not catching error since if this fails then our database is corrupted and the app won't work anyway.
-        _fetchedResultsController.performFetch(nil)
+        fetchedResultsController.performFetch(nil)
         
-        return _fetchedResultsController
-    }
+        return fetchedResultsController
+    } ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +38,7 @@ class JobTableViewController: UITableViewController {
         
         // Add an "Add" Button to the right side of the navigation bar
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addJob:")
-        navigationItem.setRightBarButtonItem(addButton, animated: true)
+        navigationItem.setRightBarButtonItems([addButton,editButtonItem()], animated: true)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -51,7 +50,7 @@ class JobTableViewController: UITableViewController {
     // MARK: - Job Table View Handlers
     func addJob(sender:UIBarButtonItem) {
         
-        let title = NSLocalizedString("titleCreateJobDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Jobs", comment: "Job Title View Controller Title")
+        let title = NSLocalizedString("titleCreateJobDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Create Job", comment: "Job Creation Title View Controller Title")
         let placeholder = NSLocalizedString("placeholderCreateJobDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Job", comment: "Placeholder for job creation dialog")
         let message = NSLocalizedString("messageCreateJobDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Enter a job name. This dialog will show up again until you press cancel so that you can easily add multiple jobs.", comment: "Message for job creation dialog")
         let ok = NSLocalizedString("okButtonCreateJobDialog", tableName: nil, bundle: NSBundle.mainBundle(), value: "Ok", comment: "Ok Button in job creation dialog")
@@ -88,15 +87,39 @@ class JobTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(kJobTableViewCell, forIndexPath: indexPath) as! JobTableViewCell
         
         cell.job = fetchedResultsController.objectAtIndexPath(indexPath) as! Job
-        
+
         return cell
     }
     
-    //this is what you need to implement swipe to delete "commitEditingStyle
+    //this is what you need to implement swipe to delete "commitEditingStyle"
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let job = fetchedResultsController.objectAtIndexPath(indexPath) as! Job
             job.delete()
         }
+    }
+    
+    override func tableView(tableView: UITableView, willBeginEditingRowAtIndexPath indexPath: NSIndexPath) {
+        if let jobCell = tableView.cellForRowAtIndexPath(indexPath) as? JobTableViewCell {
+            jobCell.disableNameButton()
+        }
+    }
+    
+    override func tableView(tableView: UITableView, didEndEditingRowAtIndexPath indexPath: NSIndexPath) {
+        if let jobCell = tableView.cellForRowAtIndexPath(indexPath) as? JobTableViewCell {
+            jobCell.enableNameButton()
+        }
+    }
+    
+    //simply overriding will enable ability to move items in a table view. Logic not included :)
+    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        //if sourceindex and destinationindex are the same, then nothing has happened.
+        if sourceIndexPath.row == destinationIndexPath.row { return }
+        
+        let source = fetchedResultsController.objectAtIndexPath(sourceIndexPath) as! NSManagedObject
+        let dest = fetchedResultsController.objectAtIndexPath(destinationIndexPath) as! NSManagedObject
+        
+        CoreData.move(kJobEntity, orderAttributeName: kJobOrderAttribute, source: source, toDestination: dest)
+        tableView.reloadData() //TODO: debugging only!!!
     }
 }

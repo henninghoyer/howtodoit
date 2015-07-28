@@ -31,6 +31,7 @@
 		83D70A1A1B5061720020E8D4 /* JobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A191B5061720020E8D4 /* JobTableViewController.swift */; };
 		83D70A1C1B5061F10020E8D4 /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A1B1B5061F10020E8D4 /* JobTableViewCell.swift */; };
 		83D70A271B52F65A0020E8D4 /* Job+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D70A261B52F65A0020E8D4 /* Job+Extension.swift */; };
+		83DDCD221B66B8A3006B20D2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DDCD211B66B8A3006B20D2 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		83D70A191B5061720020E8D4 /* JobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTableViewController.swift; sourceTree = "<group>"; };
 		83D70A1B1B5061F10020E8D4 /* JobTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
 		83D70A261B52F65A0020E8D4 /* Job+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Job+Extension.swift"; sourceTree = "<group>"; };
+		83DDCD211B66B8A3006B20D2 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				8352617B1B64F103000342F0 /* UIHelper.swift */,
+				83DDCD211B66B8A3006B20D2 /* UIView+Extension.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 		83D709C61B505C740020E8D4 /* HowToDoIt */ = {
 			isa = PBXGroup;
 			children = (
+				835261781B64F089000342F0 /* Helpers */,
 				83D70A121B505D130020E8D4 /* Common */,
 				83D70A101B505CF00020E8D4 /* HowToDoIt.entitlements */,
 				83D709C91B505C740020E8D4 /* AppDelegate.swift */,
@@ -170,7 +174,6 @@
 				83D709D51B505C740020E8D4 /* LaunchScreen.xib */,
 				83D709C71B505C740020E8D4 /* Supporting Files */,
 				83D70A191B5061720020E8D4 /* JobTableViewController.swift */,
-				835261781B64F089000342F0 /* Helpers */,
 				835261761B63AC9D000342F0 /* JobTableViewController+Extension.swift */,
 				83D70A1B1B5061F10020E8D4 /* JobTableViewCell.swift */,
 			);
@@ -427,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83D70A271B52F65A0020E8D4 /* Job+Extension.swift in Sources */,
+				83DDCD221B66B8A3006B20D2 /* UIView+Extension.swift in Sources */,
 				83D70A141B505D210020E8D4 /* Common.swift in Sources */,
 				83C6FAFF1B5C3FFB00F4E396 /* Task.swift in Sources */,
 				83D709CA1B505C740020E8D4 /* AppDelegate.swift in Sources */,
